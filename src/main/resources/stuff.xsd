@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="mtom-example-stuff"
+           targetNamespace="mtom-example-stuff" elementFormDefault="qualified">
+
+    <xs:element name="sendStuffRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stuff" type="tns:stuff"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sendStuffResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="stuff">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+<!--            <xs:element name="amount" type="xs:int"/>-->
+<!--            <xs:element name="description" type="xs:string"/>-->
+            <xs:element name="sauce" type="xs:base64Binary"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
